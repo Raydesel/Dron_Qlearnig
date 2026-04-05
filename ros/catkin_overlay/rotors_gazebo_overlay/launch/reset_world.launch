@@ -1,0 +1,7 @@
+<launch>
+    <node name="waypoint_publisher" pkg="rotors_gazebo" type="waypoint_publisher" output="screen" args="$(arg x) $(arg y) $(arg z) 0 __ns:=iris"/>
+    <node name="reset_world" pkg="rotors_gazebo" type="reset_world" output="screen"/>
+    <!--Cambie el path
+    <node name="waypoint_publisher_file" pkg="rotors_gazebo" type="waypoint_publisher_file" output="screen" args="$(find rotors_gazebo)/resource/waypoints/coordenadas_$(arg experiment_name).txt __ns:=iris"/>-->
+    <node name="waypoint_publisher_file" pkg="rotors_gazebo" type="waypoint_publisher_file" output="screen" args="$(find rotors_gazebo)/resource/waypoints/$(arg experiment_name) __ns:=iris"/>
+</launch>

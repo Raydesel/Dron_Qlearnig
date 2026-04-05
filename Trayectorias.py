@@ -245,7 +245,14 @@ def process_combination(combination):
     points = 1000 #100 #200 #300 Puntos spline
     interpolation_bezier = 0 #1=si, 0=no
     
-    path = '/home/ariel/catkin_ws/src/rotors_simulator/rotors_gazebo/resource/waypoints/'
+    _wp = os.environ.get(
+        "ROTORS_WAYPOINTS_DIR",
+        os.path.join(
+            os.path.expanduser("~"),
+            "catkin_ws/src/rotors_simulator/rotors_gazebo/resource/waypoints",
+        ),
+    )
+    path = _wp.rstrip(os.sep) + os.sep  # keep path+string concat used below
     # Ruta para crear la carpeta
     path_inicio = path+imagen[:-4]+'/'
     # Llamada a la función para crear la carpeta

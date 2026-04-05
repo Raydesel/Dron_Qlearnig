@@ -1,0 +1,14 @@
+__pycache__/
+*.swp
+*.py[cod]
+*.npy
+.Python
+
+# If a catkin workspace is ever placed inside this repo by mistake
+build/
+devel/
+logs/
+.catkin_workspace
+
+# Large generated experiment outputs (optional: remove if you want to track waypoints)
+# rotors_gazebo/resource/waypoints/

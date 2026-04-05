@@ -1,0 +1,24 @@
+# Shell aliases for this project (Ubuntu 20.04)
+# Copy the blocks you use into ~/.bashrc, then: source ~/.bashrc
+#
+# ROS Noetic: ensure you already source /opt/ros/noetic/setup.bash and your workspace:
+#   source ~/catkin_ws/devel/setup.bash
+
+# Repository root (edit if you cloned elsewhere)
+export DRON_QL_REPO="$HOME/Documents/Python2ROS/Dron_Qlearnig"
+
+alias cdbag='cd ~/Documents/notebook/bagpy/data && nautilus . '
+alias cdpy2rs="cd \"$DRON_QL_REPO\" && nautilus ."
+alias cdtesis='nautilus ~/Documents/Tesis/tesis_tablas'
+
+# Open RotorS waypoint folder in the file manager (requires roscd after sourcing workspace)
+alias cdwp='roscd rotors_gazebo/resource/waypoints && nautilus .'
+
+# Optional: quick jump to this repo in the terminal (no nautilus)
+alias cddronql='cd "$DRON_QL_REPO"'
+
+# Waypoint output directory for Python (matches Trayectorias.py when using defaults)
+export ROTORS_WAYPOINTS_DIR="$HOME/catkin_ws/src/rotors_simulator/rotors_gazebo/resource/waypoints"
+
+# Legacy workflow from q_learning_dron_v8 (uncomment and fix paths if you still use it):
+# alias wp_pr='cd /home/ariel/Documents/Python2ROS/q_learning_dron_v8 && conda activate && python wp_pr_pruebas_detect_collision.py'

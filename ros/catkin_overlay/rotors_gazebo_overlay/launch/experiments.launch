@@ -1,0 +1,18 @@
+<launch>
+<!--     <include file="$(find rotors_gazebo)/launch/mav_with_waypoint_publisher.launch">
+        <arg name="mav_name" value="iris"/>
+        <arg name="world_name" value="laberinto"/>
+        <arg name="x" value="-8"/>
+        <arg name="y" value=" 8"/>
+        <arg name="z" value="3"/>
+        <arg name="experiment_name" value="bezier_0"/>
+    </include>  -->
+    <include file="$(find rotors_gazebo)/launch/mav_with_waypoint_publisher.launch">
+        <arg name="mav_name" value="iris"/>
+        <arg name="world_name" value="laberinto"/>
+        <arg name="x" value="-8"/>
+        <arg name="y" value=" 8"/>
+        <arg name="z" value="3"/>
+        <arg name="experiment_name" value="bezier_1"/>
+    </include> 
+</launch>

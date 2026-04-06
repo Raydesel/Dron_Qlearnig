@@ -17,6 +17,17 @@ The code builds **2D indoor trajectories** from **binary occupancy maps** using 
 
 **Keywords (from the thesis):** autonomous navigation, indoor environments, UAVs, reinforcement learning, Q-learning.
 
+## Data engineering angle (telemetry & reproducibility)
+
+This project is **reinforcement learning** research, but it is also a **structured pipeline** from raw spatial inputs to evaluated outputs—similar in spirit to **sensor / telemetry analytics** and **offline experimentation**:
+
+- **Inputs**: rasterized environment data (binary maps), discretization and graph structure, consistent naming for derived artifacts.
+- **Transformations**: training runs that emit **versionable artifacts** (e.g. `Q_table.npy`, convergence CSVs), trajectory generation, spline-based densification, and timed waypoint sequences for downstream consumers.
+- **Outputs**: **CSV/TXT** waypoint files, aggregated experiment tables (`Trayectorias_datos_*.csv`), and **plots** for comparison—supporting **repeatable** hyperparameter sweeps (including multiprocessing over combinations).
+- **Quality / metrics**: **RMSE** and **percentage error** on position and yaw against references, aligned with how data teams quantify pipeline or model drift.
+
+If you are hiring for **data engineering**, treat this repo as evidence of **Python data/code workflow**, **batch experimentation**, and **clear handoffs** to other systems (here: ROS/Gazebo), alongside the lakehouse and ETL work listed on my CV.
+
 ## Documentation (ROS, catkin, tutorials)
 
 - **[docs/README.md](docs/README.md)** — index of the PDF notes (map → Gazebo → RotorS → Python, methodology, UAV pose, reset).
